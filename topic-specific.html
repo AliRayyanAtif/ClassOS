@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Study techniques and free learning resources for university students.">
+  <title>Study Tips · ClassWork OS</title>
+  <link rel="icon" type="image/svg+xml" href="images/logo.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Silkscreen:wght@400;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="tips">
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <div class="app">
+    <!-- ===== Sidebar (desktop & tablet) ===== -->
+    <aside class="sidebar">
+      <a class="brand" href="index.html"><img src="images/logo.svg" alt="ClassWork OS logo" width="24" height="24"><span class="logo">ClassWork&nbsp;OS</span></a>
+      <nav class="side-nav" aria-label="Main navigation">
+        <a class="nav-item" href="index.html" title="Home"><svg class="ic" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" aria-hidden="true"><path d="M2 7l6-5 6 5M4 6.5V14h8V6.5"/></svg><span class="label">Home</span></a>
+        <a class="nav-item" href="explore.html" title="Class Work"><svg class="ic" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" aria-hidden="true"><path d="M3 2h10v12H3zM5.5 5.5h5M5.5 8h5M5.5 10.5h3"/></svg><span class="label">Class Work</span></a>
+        <a class="nav-item" href="details.html" title="Task Details"><svg class="ic" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" aria-hidden="true"><path d="M4 1.5h6l3 3v10H4zM9.5 1.5v3.5H13M6 8h5M6 10.5h5M6 13h3"/></svg><span class="label">Task Details</span></a>
+        <a class="nav-item" href="interactive.html" title="Planner"><svg class="ic" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" aria-hidden="true"><path d="M2.5 3.5h11v10h-11zM2.5 6.5h11M5 2v3M11 2v3M5 9h2M9 9h2M5 11.5h2"/></svg><span class="label">Planner</span></a>
+        <a class="nav-item active" aria-current="page" href="topic-specific.html" title="Study Tips"><svg class="ic" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" aria-hidden="true"><path d="M8 1.8a4.2 4.2 0 00-2.4 7.7V11h4.8V9.5A4.2 4.2 0 008 1.8zM6 13h4M6.8 14.8h2.4"/></svg><span class="label">Study Tips</span></a>
+        <a class="nav-item" href="contact.html" title="Feedback"><svg class="ic" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" aria-hidden="true"><path d="M2 3h12v8H7l-3 2.5V11H2z"/></svg><span class="label">Feedback</span></a>
+      </nav>
+      <div class="spacer"></div>
+      <p class="acct">No login needed.<br>Your data stays in <b>your browser</b>.</p>
+    </aside>
+
+    <div class="content">
+      <!-- ===== Top bar ===== -->
+      <header class="topbar">
+        <p class="page-title">STUDY_TIPS</p>
+        <form class="tb-search" action="explore.html" method="get" role="search">
+          <label class="sr-only" for="topSearch">Search your class work</label>
+          <svg class="ic" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="7" cy="7" r="4.5"/><path d="M11 11l3 3"/></svg>
+          <input id="topSearch" name="q" type="search" placeholder="Search tasks…" autocomplete="off">
+        </form>
+        <div class="tb-right">
+          <button class="btn primary" type="button" data-add><svg class="ic" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M8 3v10M3 8h10"/></svg> Add</button>
+        </div>
+      </header>
+
+      <!-- ===== Page content ===== -->
+      <main id="main" class="view-wrap">
+        <section class="page-head">
+          <div>
+            <h1>Study Tips &amp; Resources</h1>
+            <p>Simple, well-known techniques to help you focus, remember more and prepare for exams — plus free places to learn.</p>
+          </div>
+          <img src="images/tips.svg" alt="Light bulb" width="64" height="64">
+        </section>
+
+        <!-- Technique cards -->
+        <section class="block" aria-labelledby="tipsTitle">
+          <h2 class="section-title" id="tipsTitle">Study techniques</h2>
+          <div class="tip-list" id="tipList"></div>
+        </section>
+
+        <!-- Resources table -->
+        <section class="block" aria-labelledby="resTitle">
+          <h2 class="section-title" id="resTitle">Free learning resources</h2>
+          <div class="table-wrap">
+            <table class="res-table">
+              <caption>Well-known free resources for first-year computer science students</caption>
+              <thead>
+                <tr><th scope="col">Resource</th><th scope="col">Best for</th><th scope="col">Format</th><th scope="col">Link</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>CS50x (Harvard)</td><td>Intro to computer science &amp; C</td><td>Video course</td><td><a href="https://cs50.harvard.edu/x/" target="_blank" rel="noopener">cs50.harvard.edu</a></td></tr>
+                <tr><td>learncpp.com</td><td>Learning C++ step by step</td><td>Tutorials</td><td><a href="https://www.learncpp.com/" target="_blank" rel="noopener">learncpp.com</a></td></tr>
+                <tr><td>Khan Academy</td><td>Calculus, algebra &amp; physics</td><td>Videos &amp; practice</td><td><a href="https://www.khanacademy.org/" target="_blank" rel="noopener">khanacademy.org</a></td></tr>
+                <tr><td>MDN Web Docs</td><td>HTML, CSS &amp; JavaScript reference</td><td>Documentation</td><td><a href="https://developer.mozilla.org/" target="_blank" rel="noopener">developer.mozilla.org</a></td></tr>
+                <tr><td>freeCodeCamp</td><td>Hands-on web development</td><td>Interactive lessons</td><td><a href="https://www.freecodecamp.org/" target="_blank" rel="noopener">freecodecamp.org</a></td></tr>
+                <tr><td>Desmos</td><td>Graphing functions for calculus</td><td>Online tool</td><td><a href="https://www.desmos.com/calculator" target="_blank" rel="noopener">desmos.com</a></td></tr>
+                <tr><td>Anki</td><td>Spaced-repetition flashcards</td><td>App (free on desktop &amp; Android)</td><td><a href="https://apps.ankiweb.net/" target="_blank" rel="noopener">apps.ankiweb.net</a></td></tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <!-- FAQ -->
+        <section class="block" aria-labelledby="faqTitle">
+          <h2 class="section-title" id="faqTitle">Frequently asked questions</h2>
+          <details class="faq">
+            <summary>Where is my data stored?</summary>
+            <p>In this browser’s cookies, on your own device. Nothing is uploaded. If you clear your cookies or switch browsers, your list starts empty — use “Export my data” on the Feedback page to keep a backup.</p>
+          </details>
+          <details class="faq">
+            <summary>Can my classmates see my tasks?</summary>
+            <p>No. Each browser keeps its own private copy. To share, export your data or send a classmate the task details yourself.</p>
+          </details>
+          <details class="faq">
+            <summary>How does the study planner decide what to do first?</summary>
+            <p>It uses “earliest deadline first”: each day, your hours go to the task that is due soonest, and work is planned to finish the day before the due date.</p>
+          </details>
+          <details class="faq">
+            <summary>Was AI used to make this website?</summary>
+            <p>Yes — some text was drafted with AI help. Our team reviewed it, checked facts against reliable sources, and kept the advice general. Always follow your own teacher’s instructions first.</p>
+          </details>
+        </section>
+
+      </main>
+
+      <!-- ===== Footer ===== -->
+      <footer class="site-footer">
+        <div class="foot-grid">
+          <section>
+            <a class="brand" href="index.html"><img src="images/logo.svg" alt="ClassWork OS logo" width="24" height="24"><span class="logo">ClassWork&nbsp;OS</span></a>
+            <p>A free class-work tracker for university students. No accounts and no server — just your browser.</p>
+          </section>
+          <nav aria-label="Footer navigation">
+            <h2 class="foot-h">PAGES</h2>
+            <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="explore.html">Class Work</a></li>
+            <li><a href="details.html">Task Details</a></li>
+            <li><a href="interactive.html">Planner</a></li>
+            <li><a href="topic-specific.html">Study Tips</a></li>
+            <li><a href="contact.html">Feedback</a></li>
+            </ul>
+          </nav>
+          <section>
+            <h2 class="foot-h">YOUR DATA &amp; AI USE</h2>
+            <p id="storageNote">💾 Everything you add is saved in this browser’s cookies.</p>
+            <p>🤖 Some written content on this site was drafted with help from AI tools and then reviewed and checked by our team.</p>
+          </section>
+        </div>
+        <p class="copy">© 2026 ClassWork OS · Introduction to ICT web project</p>
+      </footer>
+    </div>
+  </div>
+
+  <!-- ===== Bottom navigation (mobile) ===== -->
+  <nav class="bottomnav" aria-label="Mobile navigation">
+    <a href="index.html"><svg class="ic" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" aria-hidden="true"><path d="M2 7l6-5 6 5M4 6.5V14h8V6.5"/></svg>Home</a>
+    <a href="explore.html"><svg class="ic" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" aria-hidden="true"><path d="M3 2h10v12H3zM5.5 5.5h5M5.5 8h5M5.5 10.5h3"/></svg>Work</a>
+    <a href="details.html"><svg class="ic" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" aria-hidden="true"><path d="M4 1.5h6l3 3v10H4zM9.5 1.5v3.5H13M6 8h5M6 10.5h5M6 13h3"/></svg>Details</a>
+    <a href="interactive.html"><svg class="ic" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" aria-hidden="true"><path d="M2.5 3.5h11v10h-11zM2.5 6.5h11M5 2v3M11 2v3M5 9h2M9 9h2M5 11.5h2"/></svg>Planner</a>
+    <a href="topic-specific.html" class="active" aria-current="page"><svg class="ic" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" aria-hidden="true"><path d="M8 1.8a4.2 4.2 0 00-2.4 7.7V11h4.8V9.5A4.2 4.2 0 008 1.8zM6 13h4M6.8 14.8h2.4"/></svg>Tips</a>
+    <a href="contact.html"><svg class="ic" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" aria-hidden="true"><path d="M2 3h12v8H7l-3 2.5V11H2z"/></svg>Feedback</a>
+  </nav>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

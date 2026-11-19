@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 360" width="480" height="360">
+<!-- main window -->
+<rect x="42" y="42" width="300" height="236" rx="7" fill="#3A3732"/>
+<rect x="34" y="34" width="300" height="236" rx="7" fill="#F7F3E9" stroke="#3A3732" stroke-width="4"/>
+<rect x="34" y="34" width="300" height="30" rx="7" fill="#3A3732"/><rect x="34" y="52" width="300" height="12" fill="#3A3732"/>
+<circle cx="52" cy="49" r="4" fill="none" stroke="#F7F3E9" stroke-width="2"/><circle cx="66" cy="49" r="4" fill="none" stroke="#F7F3E9" stroke-width="2"/><circle cx="80" cy="49" r="4" fill="none" stroke="#F7F3E9" stroke-width="2"/>
+<text x="318" y="54" text-anchor="end" font-family="monospace" font-size="13" fill="#F7F3E9">MY_WEEK</text>
+<!-- rows -->
+<g stroke="#3A3732" stroke-width="3">
+ <rect x="56" y="84" width="20" height="20" rx="3" fill="#fff"/>
+ <rect x="56" y="128" width="20" height="20" rx="3" fill="#fff"/>
+ <rect x="56" y="172" width="20" height="20" rx="3" fill="#fff"/>
+ <rect x="56" y="216" width="20" height="20" rx="3" fill="#fff"/>
+</g>
+<path d="M60 94l5 5 9-11" fill="none" stroke="#4E7A3A" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+<circle cx="94" cy="94" r="6" fill="#4E7A3A"/><rect x="108" y="90" width="130" height="8" fill="#6E6A5F" opacity=".55"/><rect x="104" y="93" width="138" height="2.5" fill="#3A3732"/>
+<circle cx="94" cy="138" r="6" fill="#2F6DB5"/><rect x="108" y="134" width="150" height="8" fill="#3A3732"/>
+<rect x="272" y="128" width="46" height="20" rx="4" fill="#F6E4E0" stroke="#C4462F" stroke-width="2.5"/><text x="295" y="143" text-anchor="middle" font-family="monospace" font-size="12" font-weight="bold" fill="#C4462F">2D</text>
+<circle cx="94" cy="182" r="6" fill="#1F7A6B"/><rect x="108" y="178" width="112" height="8" fill="#3A3732"/>
+<rect x="272" y="172" width="46" height="20" rx="4" fill="#FBF0D9" stroke="#C8891F" stroke-width="2.5"/><text x="295" y="187" text-anchor="middle" font-family="monospace" font-size="12" font-weight="bold" fill="#A86F12">5D</text>
+<circle cx="94" cy="226" r="6" fill="#7A4E8C"/><rect x="108" y="222" width="140" height="8" fill="#3A3732"/>
+<!-- calendar card -->
+<rect x="302" y="172" width="150" height="150" rx="7" fill="#3A3732"/>
+<rect x="294" y="164" width="150" height="150" rx="7" fill="#fff" stroke="#3A3732" stroke-width="4"/>
+<rect x="294" y="164" width="150" height="34" rx="7" fill="#C4462F"/><rect x="294" y="186" width="150" height="12" fill="#C4462F"/>
+<line x1="294" y1="198" x2="444" y2="198" stroke="#3A3732" stroke-width="4"/>
+<rect x="294" y="164" width="150" height="150" rx="7" fill="none" stroke="#3A3732" stroke-width="4"/>
+<text x="369" y="187" text-anchor="middle" font-family="monospace" font-size="15" font-weight="bold" fill="#fff">EXAM</text>
+<g fill="#3A3732" opacity=".8">
+ <rect x="310" y="212" width="16" height="16"/><rect x="336" y="212" width="16" height="16"/><rect x="362" y="212" width="16" height="16"/><rect x="388" y="212" width="16" height="16"/><rect x="414" y="212" width="16" height="16"/>
+ <rect x="310" y="240" width="16" height="16"/><rect x="336" y="240" width="16" height="16"/><rect x="388" y="240" width="16" height="16"/><rect x="414" y="240" width="16" height="16"/>
+ <rect x="310" y="268" width="16" height="16"/><rect x="336" y="268" width="16" height="16"/><rect x="362" y="268" width="16" height="16"/>
+</g>
+<rect x="362" y="240" width="16" height="16" fill="#C4462F"/>
+<circle cx="370" cy="248" r="15" fill="none" stroke="#C8891F" stroke-width="3.5"/>
+<!-- sticky note -->
+<g transform="rotate(8 400 80)"><rect x="366" y="44" width="70" height="70" fill="#3A3732"/><rect x="360" y="38" width="70" height="70" fill="#F3D27A" stroke="#3A3732" stroke-width="3"/>
+<text x="395" y="82" text-anchor="middle" font-family="monospace" font-size="22" font-weight="bold" fill="#3A3732">A+</text></g>
+<!-- pencil -->
+<g transform="rotate(-35 120 318)"><rect x="40" y="306" width="150" height="22" fill="#C8891F" stroke="#3A3732" stroke-width="3.5"/>
+<rect x="40" y="306" width="22" height="22" fill="#E8A0A0" stroke="#3A3732" stroke-width="3.5"/>
+<path d="M190 306l30 11-30 11z" fill="#F3E4C4" stroke="#3A3732" stroke-width="3.5" stroke-linejoin="round"/>
+<path d="M211 314l9 3-9 3z" fill="#3A3732"/></g>
+</svg>

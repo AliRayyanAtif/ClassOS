@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+<rect x="7" y="7" width="54" height="54" rx="5" fill="#3A3732"/>
+<rect x="4" y="4" width="54" height="54" rx="5" fill="#F7F3E9"/>
+<rect x="4" y="4" width="54" height="12" rx="5" fill="#4E7A3A"/>
+<rect x="4" y="10" width="54" height="6" fill="#4E7A3A"/>
+<circle cx="11" cy="10" r="2" fill="#F7F3E9"/><circle cx="17" cy="10" r="2" fill="#F7F3E9"/>
+<circle cx="31" cy="33" r="10" fill="#F3D27A" stroke="#3A3732" stroke-width="2.5"/>
+<rect x="26" y="42" width="10" height="7" fill="#fff" stroke="#3A3732" stroke-width="2.5"/>
+<line x1="27" y1="53" x2="35" y2="53" stroke="#3A3732" stroke-width="2.5" stroke-linecap="round"/>
+<line x1="31" y1="19" x2="31" y2="20" stroke="#3A3732" stroke-width="2.5" stroke-linecap="round"/><line x1="17" y1="33" x2="18" y2="33" stroke="#3A3732" stroke-width="2.5" stroke-linecap="round"/><line x1="44" y1="33" x2="45" y2="33" stroke="#3A3732" stroke-width="2.5" stroke-linecap="round"/>
+<rect x="4" y="4" width="54" height="54" rx="5" fill="none" stroke="#3A3732" stroke-width="3"/>
+<line x1="4" y1="16" x2="58" y2="16" stroke="#3A3732" stroke-width="3"/>
+</svg>

@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="ClassWork OS keeps every assignment, quiz, project and exam for your class in one place — no login, saved in your browser.">
+  <title>Home · ClassWork OS</title>
+  <link rel="icon" type="image/svg+xml" href="images/logo.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Silkscreen:wght@400;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="home">
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <div class="app">
+    <!-- ===== Sidebar (desktop & tablet) ===== -->
+    <aside class="sidebar">
+      <a class="brand" href="index.html"><img src="images/logo.svg" alt="ClassWork OS logo" width="24" height="24"><span class="logo">ClassWork&nbsp;OS</span></a>
+      <nav class="side-nav" aria-label="Main navigation">
+        <a class="nav-item active" aria-current="page" href="index.html" title="Home"><svg class="ic" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" aria-hidden="true"><path d="M2 7l6-5 6 5M4 6.5V14h8V6.5"/></svg><span class="label">Home</span></a>
+        <a class="nav-item" href="explore.html" title="Class Work"><svg class="ic" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" aria-hidden="true"><path d="M3 2h10v12H3zM5.5 5.5h5M5.5 8h5M5.5 10.5h3"/></svg><span class="label">Class Work</span></a>
+        <a class="nav-item" href="details.html" title="Task Details"><svg class="ic" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" aria-hidden="true"><path d="M4 1.5h6l3 3v10H4zM9.5 1.5v3.5H13M6 8h5M6 10.5h5M6 13h3"/></svg><span class="label">Task Details</span></a>
+        <a class="nav-item" href="interactive.html" title="Planner"><svg class="ic" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" aria-hidden="true"><path d="M2.5 3.5h11v10h-11zM2.5 6.5h11M5 2v3M11 2v3M5 9h2M9 9h2M5 11.5h2"/></svg><span class="label">Planner</span></a>
+        <a class="nav-item" href="topic-specific.html" title="Study Tips"><svg class="ic" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" aria-hidden="true"><path d="M8 1.8a4.2 4.2 0 00-2.4 7.7V11h4.8V9.5A4.2 4.2 0 008 1.8zM6 13h4M6.8 14.8h2.4"/></svg><span class="label">Study Tips</span></a>
+        <a class="nav-item" href="contact.html" title="Feedback"><svg class="ic" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" aria-hidden="true"><path d="M2 3h12v8H7l-3 2.5V11H2z"/></svg><span class="label">Feedback</span></a>
+      </nav>
+      <div class="spacer"></div>
+      <p class="acct">No login needed.<br>Your data stays in <b>your browser</b>.</p>
+    </aside>
+
+    <div class="content">
+      <!-- ===== Top bar ===== -->
+      <header class="topbar">
+        <p class="page-title">HOME</p>
+        <form class="tb-search" action="explore.html" method="get" role="search">
+          <label class="sr-only" for="topSearch">Search your class work</label>
+          <svg class="ic" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="7" cy="7" r="4.5"/><path d="M11 11l3 3"/></svg>
+          <input id="topSearch" name="q" type="search" placeholder="Search tasks…" autocomplete="off">
+        </form>
+        <div class="tb-right">
+          <button class="btn primary" type="button" data-add><svg class="ic" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M8 3v10M3 8h10"/></svg> Add</button>
+        </div>
+      </header>
+
+      <!-- ===== Page content ===== -->
+      <main id="main" class="view-wrap">
+        <!-- HERO -->
+        <section class="window hero reveal" aria-labelledby="heroTitle">
+          <div class="titlebar"><span>WELCOME.EXE</span><span class="dots"><i></i><i></i><i></i></span></div>
+          <div class="hero-body">
+            <div class="hero-text">
+              <p class="eyebrow" id="greet">Hello 👋</p>
+              <h1 id="heroTitle"><img class="hero-logo" src="images/logo.svg" alt="ClassWork OS logo" width="40" height="40"> ClassWork OS</h1>
+              <p class="lead">Every assignment, quiz, project and exam for your class — in one tidy place.</p>
+              <p>Deadlines reach students from WhatsApp groups, LMS portals and whiteboard photos, and it is easy to miss one. ClassWork OS pulls them together so you always know <strong>what is next</strong>, <strong>what is urgent</strong> and <strong>how to plan your study time</strong>.</p>
+              <p>There is no sign-up and no server: everything you add is saved in your own browser’s cookies.</p>
+              <div class="cta-row">
+                <a class="btn primary" href="explore.html">Browse class work →</a>
+                <a class="btn" href="interactive.html">Plan my week</a>
+              </div>
+            </div>
+            <figure class="hero-art">
+              <img src="images/hero.svg" alt="Illustration of a retro computer window showing a checklist of class tasks, next to an exam calendar, a sticky note and a pencil" width="480" height="360">
+            </figure>
+          </div>
+        </section>
+
+        <!-- STATS (filled by JavaScript) -->
+        <section class="block" aria-labelledby="statsTitle">
+          <h2 class="section-title" id="statsTitle">At a glance</h2>
+          <div class="stats" id="stats"></div>
+        </section>
+
+        <!-- DASHBOARD (filled by JavaScript) -->
+        <section class="block" aria-labelledby="dashTitle">
+          <h2 class="section-title" id="dashTitle">Your dashboard</h2>
+          <div class="dash" id="dash"></div>
+        </section>
+
+        <!-- LINKS TO THE OTHER PAGES -->
+        <section class="block" aria-labelledby="exploreTitle">
+          <h2 class="section-title" id="exploreTitle">Explore the site</h2>
+          <div class="cards">
+            <article class="card"><a href="explore.html">
+              <img src="images/explore.svg" alt="Folder with a magnifying glass" width="52" height="52">
+              <h3>Class Work</h3><p>Search, filter and sort every task on your list.</p><span class="card-go">Open →</span></a></article>
+            <article class="card"><a href="details.html">
+              <img src="images/details.svg" alt="Document with a picture and text lines" width="52" height="52">
+              <h3>Task Details</h3><p>Countdown, notes, a how-to plan and related work for one task.</p><span class="card-go">Open →</span></a></article>
+            <article class="card"><a href="interactive.html">
+              <img src="images/planner.svg" alt="Calendar page" width="52" height="52">
+              <h3>Planner</h3><p>Turn deadlines into a day-by-day study plan and track exams.</p><span class="card-go">Open →</span></a></article>
+            <article class="card"><a href="topic-specific.html">
+              <img src="images/tips.svg" alt="Light bulb" width="52" height="52">
+              <h3>Study Tips</h3><p>Proven techniques, a focus timer and free resources.</p><span class="card-go">Open →</span></a></article>
+            <article class="card"><a href="contact.html">
+              <img src="images/feedback.svg" alt="Speech bubble" width="52" height="52">
+              <h3>Feedback</h3><p>Tell us what to improve and manage your saved data.</p><span class="card-go">Open →</span></a></article>
+          </div>
+        </section>
+
+        <!-- HOW IT WORKS -->
+        <section class="window block" aria-labelledby="howTitle">
+          <div class="titlebar"><span>HOW_IT_WORKS</span><span class="dots"><i></i><i></i><i></i></span></div>
+          <div class="body">
+            <h2 id="howTitle" class="sr-only">How it works</h2>
+            <div class="how">
+              <ol class="steps">
+                <li><strong>Add your courses</strong> — open <em>Add → Class task</em> and use “Manage courses” to list your subjects.</li>
+                <li><strong>Log every task</strong> — title, type, due date and any notes from your teacher.</li>
+                <li><strong>Check the dashboard</strong> — overdue work turns red, this week’s work turns amber.</li>
+                <li><strong>Generate a study plan</strong> — the <a href="interactive.html">Planner</a> spreads your hours across the days before each deadline.</li>
+                <li><strong>Tick it off</strong> — mark tasks as done and watch the list shrink. ✅</li>
+              </ol>
+              <ul class="perks">
+                <li>🔒 No account or password</li>
+                <li>🍪 Saved in your browser’s cookies</li>
+                <li>📱 Works on phone, tablet and laptop</li>
+                <li>🧹 Export or clear your data any time</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <!-- ===== Footer ===== -->
+      <footer class="site-footer">
+        <div class="foot-grid">
+          <section>
+            <a class="brand" href="index.html"><img src="images/logo.svg" alt="ClassWork OS logo" width="24" height="24"><span class="logo">ClassWork&nbsp;OS</span></a>
+            <p>A free class-work tracker for university students. No accounts and no server — just your browser.</p>
+          </section>
+          <nav aria-label="Footer navigation">
+            <h2 class="foot-h">PAGES</h2>
+            <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="explore.html">Class Work</a></li>
+            <li><a href="details.html">Task Details</a></li>
+            <li><a href="interactive.html">Planner</a></li>
+            <li><a href="topic-specific.html">Study Tips</a></li>
+            <li><a href="contact.html">Feedback</a></li>
+            </ul>
+          </nav>
+          <section>
+            <h2 class="foot-h">YOUR DATA &amp; AI USE</h2>
+            <p id="storageNote">💾 Everything you add is saved in this browser’s cookies.</p>
+            <p>🤖 Some written content on this site was drafted with help from AI tools and then reviewed and checked by our team.</p>
+          </section>
+        </div>
+        <p class="copy">© 2026 ClassWork OS · Introduction to ICT web project</p>
+      </footer>
+    </div>
+  </div>
+
+  <!-- ===== Bottom navigation (mobile) ===== -->
+  <nav class="bottomnav" aria-label="Mobile navigation">
+    <a href="index.html" class="active" aria-current="page"><svg class="ic" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" aria-hidden="true"><path d="M2 7l6-5 6 5M4 6.5V14h8V6.5"/></svg>Home</a>
+    <a href="explore.html"><svg class="ic" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" aria-hidden="true"><path d="M3 2h10v12H3zM5.5 5.5h5M5.5 8h5M5.5 10.5h3"/></svg>Work</a>
+    <a href="details.html"><svg class="ic" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" aria-hidden="true"><path d="M4 1.5h6l3 3v10H4zM9.5 1.5v3.5H13M6 8h5M6 10.5h5M6 13h3"/></svg>Details</a>
+    <a href="interactive.html"><svg class="ic" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" aria-hidden="true"><path d="M2.5 3.5h11v10h-11zM2.5 6.5h11M5 2v3M11 2v3M5 9h2M9 9h2M5 11.5h2"/></svg>Planner</a>
+    <a href="topic-specific.html"><svg class="ic" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" aria-hidden="true"><path d="M8 1.8a4.2 4.2 0 00-2.4 7.7V11h4.8V9.5A4.2 4.2 0 008 1.8zM6 13h4M6.8 14.8h2.4"/></svg>Tips</a>
+    <a href="contact.html"><svg class="ic" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" aria-hidden="true"><path d="M2 3h12v8H7l-3 2.5V11H2z"/></svg>Feedback</a>
+  </nav>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
