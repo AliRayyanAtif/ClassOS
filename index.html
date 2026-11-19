@@ -3,12 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="ClassWork OS keeps every assignment, quiz, project and exam for your class in one place — no login, saved in your browser.">
+  <meta name="description" content="ClassWork OS keeps every assignment, quiz, project and exam for your class in one place. No login, saved in your browser.">
   <title>Home · ClassWork OS</title>
   <link rel="icon" type="image/svg+xml" href="images/logo.svg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Silkscreen:wght@400;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,400;0,500;0,700;0,800;1,400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body data-page="home">
@@ -34,11 +34,6 @@
       <!-- ===== Top bar ===== -->
       <header class="topbar">
         <p class="page-title">HOME</p>
-        <form class="tb-search" action="explore.html" method="get" role="search">
-          <label class="sr-only" for="topSearch">Search your class work</label>
-          <svg class="ic" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="7" cy="7" r="4.5"/><path d="M11 11l3 3"/></svg>
-          <input id="topSearch" name="q" type="search" placeholder="Search tasks…" autocomplete="off">
-        </form>
         <div class="tb-right">
           <button class="btn primary" type="button" data-add><svg class="ic" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M8 3v10M3 8h10"/></svg> Add</button>
         </div>
@@ -51,9 +46,9 @@
           <div class="titlebar"><span>WELCOME.EXE</span><span class="dots"><i></i><i></i><i></i></span></div>
           <div class="hero-body">
             <div class="hero-text">
-              <p class="eyebrow" id="greet">Hello 👋</p>
+              <p class="eyebrow" id="greet">Hello</p>
               <h1 id="heroTitle"><img class="hero-logo" src="images/logo.svg" alt="ClassWork OS logo" width="40" height="40"> ClassWork OS</h1>
-              <p class="lead">Every assignment, quiz, project and exam for your class — in one tidy place.</p>
+              <p class="lead">Every assignment, quiz, project and exam for your class, in one tidy place.</p>
               <p>Deadlines reach students from WhatsApp groups, LMS portals and whiteboard photos, and it is easy to miss one. ClassWork OS pulls them together so you always know <strong>what is next</strong>, <strong>what is urgent</strong> and <strong>how to plan your study time</strong>.</p>
               <p>There is no sign-up and no server: everything you add is saved in your own browser’s cookies.</p>
               <div class="cta-row">
@@ -108,17 +103,17 @@
             <h2 id="howTitle" class="sr-only">How it works</h2>
             <div class="how">
               <ol class="steps">
-                <li><strong>Add your courses</strong> — open <em>Add → Class task</em> and use “Manage courses” to list your subjects.</li>
-                <li><strong>Log every task</strong> — title, type, due date and any notes from your teacher.</li>
-                <li><strong>Check the dashboard</strong> — overdue work turns red, this week’s work turns amber.</li>
-                <li><strong>Generate a study plan</strong> — the <a href="interactive.html">Planner</a> spreads your hours across the days before each deadline.</li>
-                <li><strong>Tick it off</strong> — mark tasks as done and watch the list shrink. ✅</li>
+                <li><strong>Add your courses:</strong> open <em>Add → Class task</em> and use “Manage courses” to list your subjects.</li>
+                <li><strong>Log every task:</strong> title, type, due date and any notes from your teacher.</li>
+                <li><strong>Check the dashboard:</strong> overdue work turns red, this week’s work turns amber.</li>
+                <li><strong>Generate a study plan:</strong> the <a href="interactive.html">Planner</a> spreads your hours across the days before each deadline.</li>
+                <li><strong>Tick it off:</strong> mark tasks as done and watch the list shrink.</li>
               </ol>
               <ul class="perks">
-                <li>🔒 No account or password</li>
-                <li>🍪 Saved in your browser’s cookies</li>
-                <li>📱 Works on phone, tablet and laptop</li>
-                <li>🧹 Export or clear your data any time</li>
+                <li><svg class="ic" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7h10v7H3zM5 7V5a3 3 0 016 0v2"/></svg>No account or password</li>
+                <li><svg class="ic" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 4c0-1.1 2.2-2 5-2s5 .9 5 2-2.2 2-5 2-5-.9-5-2zM3 4v8c0 1.1 2.2 2 5 2s5-.9 5-2V4M3 8c0 1.1 2.2 2 5 2s5-.9 5-2"/></svg>Saved in your browser’s cookies</li>
+                <li><svg class="ic" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1.5 3h9v7h-9zM4 13h4M6 10v3M12 6h3v7.5h-3z"/></svg>Works on phone, tablet and laptop</li>
+                <li><svg class="ic" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 4.5h10M6.5 4.5V2.5h3v2M4.5 4.5l.7 9h5.6l.7-9"/></svg>Export or clear your data any time</li>
               </ul>
             </div>
           </div>
@@ -130,7 +125,7 @@
         <div class="foot-grid">
           <section>
             <a class="brand" href="index.html"><img src="images/logo.svg" alt="ClassWork OS logo" width="24" height="24"><span class="logo">ClassWork&nbsp;OS</span></a>
-            <p>A free class-work tracker for university students. No accounts and no server — just your browser.</p>
+            <p>A free class-work tracker for university students. No accounts and no server, just your browser.</p>
           </section>
           <nav aria-label="Footer navigation">
             <h2 class="foot-h">PAGES</h2>
@@ -145,8 +140,8 @@
           </nav>
           <section>
             <h2 class="foot-h">YOUR DATA &amp; AI USE</h2>
-            <p id="storageNote">💾 Everything you add is saved in this browser’s cookies.</p>
-            <p>🤖 Some written content on this site was drafted with help from AI tools and then reviewed and checked by our team.</p>
+            <p class="ic-line"><svg class="ic" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 4c0-1.1 2.2-2 5-2s5 .9 5 2-2.2 2-5 2-5-.9-5-2zM3 4v8c0 1.1 2.2 2 5 2s5-.9 5-2V4M3 8c0 1.1 2.2 2 5 2s5-.9 5-2"/></svg><span id="storageNote">Everything you add is saved in this browser’s cookies.</span></p>
+            <p class="ic-line"><svg class="ic" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 1.5l1.5 4.5 4.5 1.5-4.5 1.5L8 13.5 6.5 9 2 7.5 6.5 6z"/></svg><span>Some written content on this site was drafted with help from AI tools and then reviewed and checked by our team.</span></p>
           </section>
         </div>
         <p class="copy">© 2026 ClassWork OS · Introduction to ICT web project</p>

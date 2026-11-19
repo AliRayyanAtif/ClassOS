@@ -3,12 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Browse, search, filter and sort all your class tasks.">
+  <meta name="description" content="Browse, filter and sort all your class tasks.">
   <title>Class Work · ClassWork OS</title>
   <link rel="icon" type="image/svg+xml" href="images/logo.svg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Silkscreen:wght@400;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,400;0,500;0,700;0,800;1,400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body data-page="explore">
@@ -34,11 +34,6 @@
       <!-- ===== Top bar ===== -->
       <header class="topbar">
         <p class="page-title">CLASS_WORK</p>
-        <form class="tb-search" action="explore.html" method="get" role="search">
-          <label class="sr-only" for="topSearch">Search your class work</label>
-          <svg class="ic" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="7" cy="7" r="4.5"/><path d="M11 11l3 3"/></svg>
-          <input id="topSearch" name="q" type="search" placeholder="Search tasks…" autocomplete="off">
-        </form>
         <div class="tb-right">
           <button class="btn primary" type="button" data-add><svg class="ic" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M8 3v10M3 8h10"/></svg> Add</button>
         </div>
@@ -49,17 +44,12 @@
         <section class="page-head">
           <div>
             <h1>Class Work</h1>
-            <p>Browse every task on your list. Search by title, course or notes, filter by type, and sort however you like. Click a task to open it.</p>
+            <p>Every task on your list. Filter by type, sort however you like, tick the box when you finish, and click a title to open it.</p>
           </div>
           <img src="images/explore.svg" alt="Folder with a magnifying glass" width="64" height="64">
         </section>
 
-        <section class="toolbar" aria-label="Search, filter and sort">
-          <div class="search">
-            <svg class="ic" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="7" cy="7" r="4.5"/><path d="M11 11l3 3"/></svg>
-            <label class="sr-only" for="searchInput">Search tasks</label>
-            <input id="searchInput" type="search" placeholder="Search tasks, courses or notes…" autocomplete="off">
-          </div>
+        <section class="toolbar" aria-label="Filter and sort">
           <div class="filters" id="filters" role="group" aria-label="Filter by task type">
             <button class="fbtn" type="button" data-filter="All">All</button>
             <button class="fbtn" type="button" data-filter="Assignment">Assignment</button>
@@ -102,8 +92,8 @@
               <li class="t-Project"><span class="tdot"></span>Project</li>
               <li class="t-Presentation"><span class="tdot"></span>Presentation</li>
               <li class="t-Other"><span class="tdot"></span>Other</li>
-              <li class="c-red"><span class="tdot"></span>Red edge = overdue</li>
-              <li class="c-amber"><span class="tdot"></span>Amber edge = due within 7 days</li>
+              <li class="c-red"><span class="tdot"></span>Red date = overdue</li>
+              <li class="c-amber"><span class="tdot"></span>Amber date = coming up</li>
             </ul>
           </div>
         </aside>
@@ -114,7 +104,7 @@
         <div class="foot-grid">
           <section>
             <a class="brand" href="index.html"><img src="images/logo.svg" alt="ClassWork OS logo" width="24" height="24"><span class="logo">ClassWork&nbsp;OS</span></a>
-            <p>A free class-work tracker for university students. No accounts and no server — just your browser.</p>
+            <p>A free class-work tracker for university students. No accounts and no server, just your browser.</p>
           </section>
           <nav aria-label="Footer navigation">
             <h2 class="foot-h">PAGES</h2>
@@ -129,8 +119,8 @@
           </nav>
           <section>
             <h2 class="foot-h">YOUR DATA &amp; AI USE</h2>
-            <p id="storageNote">💾 Everything you add is saved in this browser’s cookies.</p>
-            <p>🤖 Some written content on this site was drafted with help from AI tools and then reviewed and checked by our team.</p>
+            <p class="ic-line"><svg class="ic" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 4c0-1.1 2.2-2 5-2s5 .9 5 2-2.2 2-5 2-5-.9-5-2zM3 4v8c0 1.1 2.2 2 5 2s5-.9 5-2V4M3 8c0 1.1 2.2 2 5 2s5-.9 5-2"/></svg><span id="storageNote">Everything you add is saved in this browser’s cookies.</span></p>
+            <p class="ic-line"><svg class="ic" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 1.5l1.5 4.5 4.5 1.5-4.5 1.5L8 13.5 6.5 9 2 7.5 6.5 6z"/></svg><span>Some written content on this site was drafted with help from AI tools and then reviewed and checked by our team.</span></p>
           </section>
         </div>
         <p class="copy">© 2026 ClassWork OS · Introduction to ICT web project</p>

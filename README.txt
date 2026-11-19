@@ -1,4 +1,4 @@
-ClassWork OS — Introduction to ICT web project
+ClassWork OS: Introduction to ICT web project
 ================================================
 
 What it is
@@ -28,14 +28,14 @@ Feedback page ("Clear all my data").
 
 The six pages
 -------------
-1. index.html          Home — intro, purpose, live dashboard, links to every page
-2. explore.html        Class Work — search, type filter, status filter, sort, expandable task cards
-3. details.html        Task Details — details.html?id=... shows countdown, info table, notes,
+1. index.html          Home: intro, purpose, live dashboard, links to every page
+2. explore.html        Class Work: type filter, status filter, sort, task cards
+3. details.html        Task Details: details.html?id=... opens a modal card with shows countdown, info table, notes,
                        step-by-step guide, related tasks, course exam dates, prev/next task
-4. interactive.html    Planner — study-plan generator (earliest-deadline-first) + exams & dates schedule
-5. contact.html        Feedback — validated form (honest success message, nothing is sent),
+4. interactive.html    Planner: study-plan generator (earliest-deadline-first) + exams & dates schedule
+5. contact.html        Feedback: validated form (honest success message, nothing is sent),
                        export / sample / clear data controls
-6. topic-specific.html Study Tips — Pomodoro focus timer, searchable technique cards,
+6. topic-specific.html Study Tips: Pomodoro focus timer, searchable technique cards,
                        resources table, FAQ
 
 

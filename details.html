@@ -8,7 +8,7 @@
   <link rel="icon" type="image/svg+xml" href="images/logo.svg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Silkscreen:wght@400;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,400;0,500;0,700;0,800;1,400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body data-page="details">
@@ -34,11 +34,6 @@
       <!-- ===== Top bar ===== -->
       <header class="topbar">
         <p class="page-title">TASK_DETAILS</p>
-        <form class="tb-search" action="explore.html" method="get" role="search">
-          <label class="sr-only" for="topSearch">Search your class work</label>
-          <svg class="ic" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="7" cy="7" r="4.5"/><path d="M11 11l3 3"/></svg>
-          <input id="topSearch" name="q" type="search" placeholder="Search tasks…" autocomplete="off">
-        </form>
         <div class="tb-right">
           <button class="btn primary" type="button" data-add><svg class="ic" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M8 3v10M3 8h10"/></svg> Add</button>
         </div>
@@ -54,85 +49,16 @@
           </ol>
         </nav>
 
-        <!-- Shown when no task (or a deleted task) is chosen -->
-        <section class="window" id="detailPicker" hidden aria-labelledby="pickerTitle">
-          <div class="titlebar"><span>CHOOSE_A_TASK</span><span class="dots"><i></i><i></i><i></i></span></div>
+        <!-- Task list: clicking a task opens the modal card below -->
+        <section class="window" id="detailPicker" aria-labelledby="pickerTitle">
+          <div class="titlebar"><span>ALL_TASKS</span><span class="dots"><i></i><i></i><i></i></span></div>
           <div class="body">
             <h1 id="pickerTitle">Task Details</h1>
-            <p>Pick any task to see its countdown, notes, a step-by-step plan and related work from the same course.</p>
+            <p>Click any task to see its countdown, notes, a step-by-step plan and related work from the same course.</p>
             <div id="pickerNote"></div>
             <div id="pickerList"></div>
           </div>
         </section>
-
-        <div class="detail-grid">
-          <!-- Main task information -->
-          <article class="window" id="detailArticle" hidden>
-            <div class="titlebar"><span>TASK_FILE</span><span class="dots"><i></i><i></i><i></i></span></div>
-            <div class="body">
-              <header class="detail-head">
-                <img id="dImg" src="images/assignment.svg" alt="Task type icon" width="72" height="72">
-                <div class="dh-main">
-                  <p class="eyebrow" id="dCourse">Course</p>
-                  <h1 id="dTitle">Task</h1>
-                  <p class="chips" id="dChips"></p>
-                </div>
-                <div class="countdown" id="dCount" aria-live="polite"></div>
-              </header>
-
-              <section class="detail-sec" aria-labelledby="ovTitle">
-                <h2 id="ovTitle">Overview</h2>
-                <table class="info-table">
-                  <caption class="sr-only">Task information</caption>
-                  <tbody id="dTable"></tbody>
-                </table>
-              </section>
-
-              <section class="detail-sec" aria-labelledby="notesTitle">
-                <h2 id="notesTitle">Notes</h2>
-                <p class="notes-box" id="dNotes"></p>
-              </section>
-
-              <section class="detail-sec" aria-labelledby="guideTitle">
-                <h2 id="guideTitle">How to tackle it</h2>
-                <p id="dGuideIntro"></p>
-                <ol class="guide" id="dGuide"></ol>
-                <p class="hint">More techniques on the <a href="topic-specific.html">Study Tips</a> page.</p>
-              </section>
-
-              <div class="actions detail-actions">
-                <button class="btn primary" type="button" id="dDone">✓ Mark as done</button>
-                <a class="btn" id="dPlan" href="interactive.html">🗓 Plan study time</a>
-                <button class="btn" type="button" id="dEdit">Edit</button>
-                <button class="btn danger" type="button" id="dDelete">Delete</button>
-              </div>
-            </div>
-          </article>
-
-          <!-- Related content -->
-          <aside class="side-stack" id="detailAside" hidden aria-label="Related tasks and dates">
-            <section class="window">
-              <div class="titlebar"><span>SAME_COURSE</span><span class="dots"><i></i><i></i><i></i></span></div>
-              <div class="body">
-                <h2 id="dRelatedTitle">More from this course</h2>
-                <div id="dRelated"></div>
-                <button class="linkbtn" type="button" id="dAddRelated">＋ Add a task for this course</button>
-              </div>
-            </section>
-            <section class="window">
-              <div class="titlebar"><span>COURSE_DATES</span><span class="dots"><i></i><i></i><i></i></span></div>
-              <div class="body">
-                <h2>Exams &amp; dates</h2>
-                <div id="dDates"></div>
-                <a class="linkbtn" href="interactive.html#schedule">See full schedule →</a>
-              </div>
-            </section>
-            <nav class="window" aria-label="Previous and next task">
-              <div class="titlebar"><span>BROWSE_BY_DATE</span><span class="dots"><i></i><i></i><i></i></span></div>
-              <div class="body pager" id="dPager"></div>
-            </nav>
-          </aside>
-        </div>
       </main>
 
       <!-- ===== Footer ===== -->
@@ -140,7 +66,7 @@
         <div class="foot-grid">
           <section>
             <a class="brand" href="index.html"><img src="images/logo.svg" alt="ClassWork OS logo" width="24" height="24"><span class="logo">ClassWork&nbsp;OS</span></a>
-            <p>A free class-work tracker for university students. No accounts and no server — just your browser.</p>
+            <p>A free class-work tracker for university students. No accounts and no server, just your browser.</p>
           </section>
           <nav aria-label="Footer navigation">
             <h2 class="foot-h">PAGES</h2>
@@ -155,8 +81,8 @@
           </nav>
           <section>
             <h2 class="foot-h">YOUR DATA &amp; AI USE</h2>
-            <p id="storageNote">💾 Everything you add is saved in this browser’s cookies.</p>
-            <p>🤖 Some written content on this site was drafted with help from AI tools and then reviewed and checked by our team.</p>
+            <p class="ic-line"><svg class="ic" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 4c0-1.1 2.2-2 5-2s5 .9 5 2-2.2 2-5 2-5-.9-5-2zM3 4v8c0 1.1 2.2 2 5 2s5-.9 5-2V4M3 8c0 1.1 2.2 2 5 2s5-.9 5-2"/></svg><span id="storageNote">Everything you add is saved in this browser’s cookies.</span></p>
+            <p class="ic-line"><svg class="ic" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 1.5l1.5 4.5 4.5 1.5-4.5 1.5L8 13.5 6.5 9 2 7.5 6.5 6z"/></svg><span>Some written content on this site was drafted with help from AI tools and then reviewed and checked by our team.</span></p>
           </section>
         </div>
         <p class="copy">© 2026 ClassWork OS · Introduction to ICT web project</p>
@@ -173,6 +99,65 @@
     <a href="topic-specific.html"><svg class="ic" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" aria-hidden="true"><path d="M8 1.8a4.2 4.2 0 00-2.4 7.7V11h4.8V9.5A4.2 4.2 0 008 1.8zM6 13h4M6.8 14.8h2.4"/></svg>Tips</a>
     <a href="contact.html"><svg class="ic" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" aria-hidden="true"><path d="M2 3h12v8H7l-3 2.5V11H2z"/></svg>Feedback</a>
   </nav>
+
+  <!-- ===== Task detail modal ===== -->
+  <div class="tm-backdrop" id="taskModal" hidden>
+    <article class="tm-card" id="detailArticle" role="dialog" aria-modal="true" aria-labelledby="dTitle" tabindex="-1">
+      <button class="tm-close" type="button" id="tmClose" aria-label="Close task details">&times;</button>
+
+      <header class="detail-head">
+        <img id="dImg" src="images/assignment.svg" alt="Task type icon" width="56" height="56">
+        <div class="dh-main">
+          <p class="eyebrow" id="dCourse">Course</p>
+          <h1 id="dTitle">Task</h1>
+          <p class="chips" id="dChips"></p>
+        </div>
+        <div class="countdown" id="dCount" aria-live="polite"></div>
+      </header>
+
+      <section class="detail-sec" aria-labelledby="ovTitle">
+        <h2 id="ovTitle">Overview</h2>
+        <table class="info-table">
+          <caption class="sr-only">Task information</caption>
+          <tbody id="dTable"></tbody>
+        </table>
+      </section>
+
+      <section class="detail-sec" aria-labelledby="notesTitle">
+        <h2 id="notesTitle">Notes</h2>
+        <p class="notes-box" id="dNotes"></p>
+      </section>
+
+      <section class="detail-sec" aria-labelledby="guideTitle">
+        <h2 id="guideTitle">How to tackle it</h2>
+        <p id="dGuideIntro"></p>
+        <ol class="guide" id="dGuide"></ol>
+        <p class="hint">More techniques on the <a href="topic-specific.html">Study Tips</a> page.</p>
+      </section>
+
+      <div class="detail-sec tm-related">
+        <section aria-labelledby="dRelatedTitle">
+          <h2 id="dRelatedTitle">More from this course</h2>
+          <div id="dRelated"></div>
+          <button class="linkbtn" type="button" id="dAddRelated">＋ Add a task for this course</button>
+        </section>
+        <section aria-labelledby="dDatesTitle">
+          <h2 id="dDatesTitle">Exams &amp; dates</h2>
+          <div id="dDates"></div>
+          <a class="linkbtn" href="interactive.html#schedule">See full schedule →</a>
+        </section>
+      </div>
+
+      <nav class="detail-sec pager tm-pager" id="dPager" aria-label="Previous and next task"></nav>
+
+      <div class="actions detail-actions">
+        <button class="btn primary" type="button" id="dDone"><svg class="ic" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8.5l3 3 7-7"/></svg>Mark as done</button>
+        <a class="btn" id="dPlan" href="interactive.html"><svg class="ic" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.5 3.5h11v10h-11zM2.5 6.5h11M5 2v3M11 2v3"/></svg>Plan study time</a>
+        <button class="btn" type="button" id="dEdit">Edit</button>
+        <button class="btn danger" type="button" id="dDelete">Delete</button>
+      </div>
+    </article>
+  </div>
 
   <script src="js/script.js"></script>
 </body>

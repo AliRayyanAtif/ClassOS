@@ -8,7 +8,7 @@
   <link rel="icon" type="image/svg+xml" href="images/logo.svg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Silkscreen:wght@400;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,400;0,500;0,700;0,800;1,400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body data-page="contact">
@@ -34,11 +34,6 @@
       <!-- ===== Top bar ===== -->
       <header class="topbar">
         <p class="page-title">FEEDBACK</p>
-        <form class="tb-search" action="explore.html" method="get" role="search">
-          <label class="sr-only" for="topSearch">Search your class work</label>
-          <svg class="ic" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="7" cy="7" r="4.5"/><path d="M11 11l3 3"/></svg>
-          <input id="topSearch" name="q" type="search" placeholder="Search tasks…" autocomplete="off">
-        </form>
         <div class="tb-right">
           <button class="btn primary" type="button" data-add><svg class="ic" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M8 3v10M3 8h10"/></svg> Add</button>
         </div>
@@ -69,7 +64,7 @@
                 </div>
 
                 <div class="field" data-field="email">
-                  <label for="f_email">Email <span class="opt">(optional — only if you want a reply)</span></label>
+                  <label for="f_email">Email <span class="opt">(optional, only if you want a reply)</span></label>
                   <input id="f_email" name="email" type="email" maxlength="80" autocomplete="email" placeholder="name@example.com" aria-describedby="err_email">
                   <p class="field-err" id="err_email"></p>
                 </div>
@@ -90,11 +85,11 @@
                 <fieldset class="field">
                   <legend>How useful is ClassWork OS? <span class="opt">(optional)</span></legend>
                   <div class="seg">
-                    <label><input type="radio" name="f_rating" value="1"><span>★</span></label>
-                    <label><input type="radio" name="f_rating" value="2"><span>★★</span></label>
-                    <label><input type="radio" name="f_rating" value="3"><span>★★★</span></label>
-                    <label><input type="radio" name="f_rating" value="4"><span>★★★★</span></label>
-                    <label><input type="radio" name="f_rating" value="5"><span>★★★★★</span></label>
+                    <label><input type="radio" name="f_rating" value="1" aria-label="1 out of 5"><span class="stars"><svg class="star" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 1.5l1.9 4.1 4.5.5-3.4 3 1 4.4L8 11.2l-4 2.3 1-4.4-3.4-3 4.5-.5z"/></svg></span></label>
+                    <label><input type="radio" name="f_rating" value="2" aria-label="2 out of 5"><span class="stars"><svg class="star" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 1.5l1.9 4.1 4.5.5-3.4 3 1 4.4L8 11.2l-4 2.3 1-4.4-3.4-3 4.5-.5z"/></svg><svg class="star" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 1.5l1.9 4.1 4.5.5-3.4 3 1 4.4L8 11.2l-4 2.3 1-4.4-3.4-3 4.5-.5z"/></svg></span></label>
+                    <label><input type="radio" name="f_rating" value="3" aria-label="3 out of 5"><span class="stars"><svg class="star" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 1.5l1.9 4.1 4.5.5-3.4 3 1 4.4L8 11.2l-4 2.3 1-4.4-3.4-3 4.5-.5z"/></svg><svg class="star" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 1.5l1.9 4.1 4.5.5-3.4 3 1 4.4L8 11.2l-4 2.3 1-4.4-3.4-3 4.5-.5z"/></svg><svg class="star" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 1.5l1.9 4.1 4.5.5-3.4 3 1 4.4L8 11.2l-4 2.3 1-4.4-3.4-3 4.5-.5z"/></svg></span></label>
+                    <label><input type="radio" name="f_rating" value="4" aria-label="4 out of 5"><span class="stars"><svg class="star" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 1.5l1.9 4.1 4.5.5-3.4 3 1 4.4L8 11.2l-4 2.3 1-4.4-3.4-3 4.5-.5z"/></svg><svg class="star" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 1.5l1.9 4.1 4.5.5-3.4 3 1 4.4L8 11.2l-4 2.3 1-4.4-3.4-3 4.5-.5z"/></svg><svg class="star" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 1.5l1.9 4.1 4.5.5-3.4 3 1 4.4L8 11.2l-4 2.3 1-4.4-3.4-3 4.5-.5z"/></svg><svg class="star" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 1.5l1.9 4.1 4.5.5-3.4 3 1 4.4L8 11.2l-4 2.3 1-4.4-3.4-3 4.5-.5z"/></svg></span></label>
+                    <label><input type="radio" name="f_rating" value="5" aria-label="5 out of 5"><span class="stars"><svg class="star" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 1.5l1.9 4.1 4.5.5-3.4 3 1 4.4L8 11.2l-4 2.3 1-4.4-3.4-3 4.5-.5z"/></svg><svg class="star" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 1.5l1.9 4.1 4.5.5-3.4 3 1 4.4L8 11.2l-4 2.3 1-4.4-3.4-3 4.5-.5z"/></svg><svg class="star" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 1.5l1.9 4.1 4.5.5-3.4 3 1 4.4L8 11.2l-4 2.3 1-4.4-3.4-3 4.5-.5z"/></svg><svg class="star" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 1.5l1.9 4.1 4.5.5-3.4 3 1 4.4L8 11.2l-4 2.3 1-4.4-3.4-3 4.5-.5z"/></svg><svg class="star" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 1.5l1.9 4.1 4.5.5-3.4 3 1 4.4L8 11.2l-4 2.3 1-4.4-3.4-3 4.5-.5z"/></svg></span></label>
                   </div>
                 </fieldset>
 
@@ -126,8 +121,8 @@
                 <label class="sr-only" for="fbText">Your feedback text</label>
                 <textarea class="result-text" id="fbText" readonly></textarea>
                 <div class="actions" style="margin-top:10px">
-                  <button class="btn primary" type="button" id="copyBtn">📋 Copy text</button>
-                  <a class="btn" id="mailLink" href="mailto:">✉️ Open in email app</a>
+                  <button class="btn primary" type="button" id="copyBtn"><svg class="ic" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5.5 5.5h8v8h-8zM3 10.5V2.5h7.5"/></svg>Copy text</button>
+                  <a class="btn" id="mailLink" href="mailto:"><svg class="ic" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 3.5h12v9H2zM2.5 4.5L8 9l5.5-4.5"/></svg>Open in email app</a>
                   <button class="btn" type="button" id="newBtn">Write another</button>
                 </div>
               </div>
@@ -154,9 +149,9 @@
                 <h2 id="dataTitle">Your saved data</h2>
                 <p id="dataStats"></p>
                 <div class="data-btns">
-                  <button class="btn" type="button" id="exportBtn">💾 Export my data (.json)</button>
-                  <button class="btn" type="button" id="sampleBtn">📦 Load sample tasks</button>
-                  <button class="btn danger" type="button" id="clearBtn">🧹 Clear all my data</button>
+                  <button class="btn" type="button" id="exportBtn"><svg class="ic" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 2.5v8M4.5 7L8 10.5 11.5 7M3 13.5h10"/></svg>Export my data (.json)</button>
+                  <button class="btn" type="button" id="sampleBtn"><svg class="ic" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.5 5L8 2.5 13.5 5v6L8 13.5 2.5 11zM2.5 5L8 7.5 13.5 5M8 7.5v6"/></svg>Load sample tasks</button>
+                  <button class="btn danger" type="button" id="clearBtn"><svg class="ic" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 4.5h10M6.5 4.5V2.5h3v2M4.5 4.5l.7 9h5.6l.7-9"/></svg>Clear all my data</button>
                 </div>
                 <p class="hint">Your tasks live only in this browser. Clearing your cookies also deletes them.</p>
               </div>
@@ -170,7 +165,7 @@
         <div class="foot-grid">
           <section>
             <a class="brand" href="index.html"><img src="images/logo.svg" alt="ClassWork OS logo" width="24" height="24"><span class="logo">ClassWork&nbsp;OS</span></a>
-            <p>A free class-work tracker for university students. No accounts and no server — just your browser.</p>
+            <p>A free class-work tracker for university students. No accounts and no server, just your browser.</p>
           </section>
           <nav aria-label="Footer navigation">
             <h2 class="foot-h">PAGES</h2>
@@ -185,8 +180,8 @@
           </nav>
           <section>
             <h2 class="foot-h">YOUR DATA &amp; AI USE</h2>
-            <p id="storageNote">💾 Everything you add is saved in this browser’s cookies.</p>
-            <p>🤖 Some written content on this site was drafted with help from AI tools and then reviewed and checked by our team.</p>
+            <p class="ic-line"><svg class="ic" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 4c0-1.1 2.2-2 5-2s5 .9 5 2-2.2 2-5 2-5-.9-5-2zM3 4v8c0 1.1 2.2 2 5 2s5-.9 5-2V4M3 8c0 1.1 2.2 2 5 2s5-.9 5-2"/></svg><span id="storageNote">Everything you add is saved in this browser’s cookies.</span></p>
+            <p class="ic-line"><svg class="ic" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 1.5l1.5 4.5 4.5 1.5-4.5 1.5L8 13.5 6.5 9 2 7.5 6.5 6z"/></svg><span>Some written content on this site was drafted with help from AI tools and then reviewed and checked by our team.</span></p>
           </section>
         </div>
         <p class="copy">© 2026 ClassWork OS · Introduction to ICT web project</p>

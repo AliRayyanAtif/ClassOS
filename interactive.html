@@ -8,7 +8,7 @@
   <link rel="icon" type="image/svg+xml" href="images/logo.svg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Silkscreen:wght@400;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,400;0,500;0,700;0,800;1,400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body data-page="planner">
@@ -34,75 +34,62 @@
       <!-- ===== Top bar ===== -->
       <header class="topbar">
         <p class="page-title">PLANNER</p>
-        <form class="tb-search" action="explore.html" method="get" role="search">
-          <label class="sr-only" for="topSearch">Search your class work</label>
-          <svg class="ic" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="7" cy="7" r="4.5"/><path d="M11 11l3 3"/></svg>
-          <input id="topSearch" name="q" type="search" placeholder="Search tasks…" autocomplete="off">
-        </form>
         <div class="tb-right">
           <button class="btn primary" type="button" data-add><svg class="ic" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M8 3v10M3 8h10"/></svg> Add</button>
         </div>
       </header>
 
       <!-- ===== Page content ===== -->
-      <main id="main" class="view-wrap">
-        <section class="page-head">
-          <div>
-            <h1>Planner</h1>
-            <p>Two tools in one: turn your task list into a day-by-day study plan, and keep track of exams and other important dates.</p>
-          </div>
-          <img src="images/planner.svg" alt="Calendar page" width="64" height="64">
-        </section>
+      <main id="main" class="view-wrap planner">
+        <header class="pl-head">
+          <h1>Planner</h1>
+          <p>Turn your deadlines into a day-by-day study plan, or keep track of exams and other key dates.</p>
+        </header>
 
-        <div class="tabs" role="tablist" aria-label="Planner tools">
-          <button class="tab" type="button" role="tab" id="tab-plan" aria-controls="panel-plan" aria-selected="true">📊 Study plan generator</button>
-          <button class="tab" type="button" role="tab" id="tab-schedule" aria-controls="panel-schedule" aria-selected="false" tabindex="-1">🗓 Exams &amp; dates</button>
+        <div class="pl-switch" role="tablist" aria-label="Planner tools">
+          <button class="pl-tab" type="button" role="tab" id="tab-plan" aria-controls="panel-plan" aria-selected="true">Study plan</button>
+          <button class="pl-tab" type="button" role="tab" id="tab-schedule" aria-controls="panel-schedule" aria-selected="false" tabindex="-1">Exams &amp; dates</button>
         </div>
 
         <!-- TOOL 1: study plan generator -->
         <section class="tabpanel" id="panel-plan" role="tabpanel" aria-labelledby="tab-plan">
           <div class="planner-grid">
-            <form class="window" id="planForm" novalidate aria-labelledby="planFormTitle">
-              <div class="titlebar"><span>PLAN_SETTINGS</span><span class="dots"><i></i><i></i><i></i></span></div>
-              <div class="body">
-                <h2 id="planFormTitle">Your study time</h2>
+            <form class="pl-card" id="planForm" novalidate aria-label="Plan settings">
+              <div class="pl-step">
+                <h2><span class="pl-num">1</span>How much can you study?</h2>
                 <div class="field row2">
                   <div><label for="p_hours">Hours per day</label><input id="p_hours" type="number" min="0.5" max="16" step="0.5"></div>
-                  <div><label for="p_start">Start from</label><input id="p_start" type="date"></div>
+                  <div><label for="p_start">Starting</label><input id="p_start" type="date"></div>
                 </div>
                 <div class="field">
                   <label for="p_off">Days off</label>
                   <select id="p_off">
-                    <option value="none">No days off</option>
-                    <option value="sun">Sundays off</option>
-                    <option value="satsun">Saturdays &amp; Sundays off</option>
+                    <option value="none">None</option>
+                    <option value="sun">Sundays</option>
+                    <option value="satsun">Saturdays &amp; Sundays</option>
                   </select>
                 </div>
-                <fieldset class="field">
-                  <legend>Tasks to include <span class="opt">(hours each task needs)</span></legend>
-                  <p class="pt-tools"><button type="button" class="linkbtn" id="ptAll">Select all</button> · <button type="button" class="linkbtn" id="ptNone">Select none</button></p>
-                  <div class="plan-tasks-box" id="planTasks"></div>
-                  <p class="hint" id="planOverdue"></p>
-                </fieldset>
+              </div>
+
+              <fieldset class="pl-step">
+                <legend><h2><span class="pl-num">2</span>Which tasks?</h2></legend>
+                <p class="pl-sub">Untick anything you don’t want planned. Adjust the hours each task needs.
+                  <span class="pt-tools"><button type="button" class="linkbtn" id="ptAll">All</button> / <button type="button" class="linkbtn" id="ptNone">None</button></span></p>
+                <div class="plan-tasks-box" id="planTasks"></div>
+                <p class="hint" id="planOverdue"></p>
+              </fieldset>
+
+              <div class="pl-step">
                 <p class="err" id="planErr" role="alert"></p>
-                <div class="foot"><button class="btn primary" type="submit">Generate plan →</button></div>
+                <button class="btn primary pl-go" type="submit"><span class="pl-num">3</span>Generate my plan</button>
               </div>
             </form>
 
             <div id="planOut" aria-live="polite">
-              <section class="window">
-                <div class="titlebar"><span>YOUR_STUDY_PLAN</span><span class="dots"><i></i><i></i><i></i></span></div>
-                <div class="body">
-                  <h2>How the plan is made</h2>
-                  <ul>
-                    <li>Tasks with the <strong>closest deadline</strong> get your hours first.</li>
-                    <li>Work is scheduled to finish <strong>the day before</strong> each due date, so you have a buffer.</li>
-                    <li>Days off are skipped.</li>
-                    <li>If a task can’t fit, you get a warning with how many hours you are short.</li>
-                  </ul>
-                  <p class="hint">Hour estimates start at: Assignment 4h · Quiz 3h · Project 8h · Presentation 5h · Other 2h. Change them to match your own speed.</p>
-                </div>
-              </section>
+              <div class="pl-card pl-empty">
+                <p class="pl-empty-title">Your plan will appear here</p>
+                <p>Closest deadlines get your hours first, and each task is scheduled to finish the day before it’s due.</p>
+              </div>
             </div>
           </div>
         </section>
@@ -116,7 +103,7 @@
               <button class="fbtn" type="button" data-kind="deadline">Deadlines</button>
               <button class="fbtn" type="button" data-kind="other">Other</button>
             </div>
-            <label class="check" for="hidePast"><input type="checkbox" id="hidePast" checked> Hide past dates</label>
+            <label class="check" for="hidePast"><input type="checkbox" id="hidePast" checked> Hide past</label>
             <button class="btn primary sm" type="button" id="addDateBtn">＋ Add date</button>
           </div>
           <div id="scheduleList"></div>
@@ -128,7 +115,7 @@
         <div class="foot-grid">
           <section>
             <a class="brand" href="index.html"><img src="images/logo.svg" alt="ClassWork OS logo" width="24" height="24"><span class="logo">ClassWork&nbsp;OS</span></a>
-            <p>A free class-work tracker for university students. No accounts and no server — just your browser.</p>
+            <p>A free class-work tracker for university students. No accounts and no server, just your browser.</p>
           </section>
           <nav aria-label="Footer navigation">
             <h2 class="foot-h">PAGES</h2>
@@ -143,8 +130,8 @@
           </nav>
           <section>
             <h2 class="foot-h">YOUR DATA &amp; AI USE</h2>
-            <p id="storageNote">💾 Everything you add is saved in this browser’s cookies.</p>
-            <p>🤖 Some written content on this site was drafted with help from AI tools and then reviewed and checked by our team.</p>
+            <p class="ic-line"><svg class="ic" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 4c0-1.1 2.2-2 5-2s5 .9 5 2-2.2 2-5 2-5-.9-5-2zM3 4v8c0 1.1 2.2 2 5 2s5-.9 5-2V4M3 8c0 1.1 2.2 2 5 2s5-.9 5-2"/></svg><span id="storageNote">Everything you add is saved in this browser’s cookies.</span></p>
+            <p class="ic-line"><svg class="ic" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 1.5l1.5 4.5 4.5 1.5-4.5 1.5L8 13.5 6.5 9 2 7.5 6.5 6z"/></svg><span>Some written content on this site was drafted with help from AI tools and then reviewed and checked by our team.</span></p>
           </section>
         </div>
         <p class="copy">© 2026 ClassWork OS · Introduction to ICT web project</p>
