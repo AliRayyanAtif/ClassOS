@@ -8,7 +8,7 @@ projects, presentations and exam dates, then see what's next, what's
 urgent, and get a day-by-day study plan.
 
 There is NO login and NO server/database. Everything a visitor adds is
-saved in their own browser's cookies (see "How data is saved" below).
+saved in their own browser's localStorage (see "How data is saved" below).
 
 
 How to run it
@@ -16,10 +16,7 @@ How to run it
 Option A (recommended): open the folder in VS Code and use the
 "Live Server" extension, then open index.html.
 Option B: upload the folder to GitHub Pages / Netlify.
-Option C: double-click index.html. This works too, but Chrome blocks
-cookies for pages opened as local files, so in that case the site
-automatically falls back to localStorage. The footer tells you which
-one is being used.
+Option C: double-click index.html. This works too.
 
 On the very first visit the site adds a few sample tasks and dates so
 it is not empty. They can be deleted, or cleared all at once from the
@@ -35,8 +32,7 @@ The six pages
 4. interactive.html    Planner: study-plan generator (earliest-deadline-first) + exams & dates schedule
 5. contact.html        Feedback: validated form (honest success message, nothing is sent),
                        export / sample / clear data controls
-6. topic-specific.html Study Tips: Pomodoro focus timer, searchable technique cards,
-                       resources table, FAQ
+6. topic-specific.html Study Tips: technique cards with show/hide steps, FAQ
 
 
 Folder structure
@@ -52,25 +48,20 @@ images/           SVG illustrations and icons (all have alt text)
 JavaScript features (rubric checklist)
 --------------------------------------
 - Form validation: feedback form (per-field errors, live re-checking),
-  task / date / course dialogs, planner settings, timer settings
-- Search: Class Work search (title, course, notes) with highlighted
-  matches; top-bar search on every page; Study Tips search
+  task / date / course dialogs, planner settings
 - DOM manipulation: dashboard, task cards, details page, plan output,
   schedule, toasts, modals are all built and updated by JS
 - Conditional logic: overdue / due-soon colours, plan verdict
   (Comfortable / Tight / Overloaded), greeting by time of day,
-  countdown labels, cookie vs localStorage fallback
-- Extra features: study-plan generator, Pomodoro timer, filtering &
-  sorting, tabs, expandable sections, dark/light mode, cookie storage
+  countdown labels
+- Extra features: study-plan generator, filtering & sorting, tabs,
+  expandable sections, task pop-up, localStorage
 
 
 How data is saved (js/script.js, section 1)
 -------------------------------------------
-Each list (tasks, dates, courses, preferences) is converted to JSON,
-URL-encoded and split into ~3 KB chunks, because one cookie can only
-hold about 4 KB:
-    cw_tasks_n = 2          number of chunks
-    cw_tasks_0 = %5B%7B...  chunk 1
-    cw_tasks_1 = ...        chunk 2
-Cookies last 365 days (max-age), path=/, SameSite=Lax.
-loadData() joins the chunks back together and parses the JSON.
+Each list (tasks, dates, courses, preferences) is converted to a JSON
+string with JSON.stringify() and saved with localStorage.setItem(),
+e.g. the key "cw_tasks". loadData() reads it back with
+localStorage.getItem() and JSON.parse(). The data stays until the
+user clears their browser data.

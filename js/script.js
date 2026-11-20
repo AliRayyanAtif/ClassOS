@@ -6,7 +6,7 @@
    the bottom runs the shared setup, then only the code for
    that page.
 
-    1. Cookie storage          7. Page: Home
+    1. Storage                 7. Page: Home
     2. Helpers                 8. Page: Class Work (explore)
     3. App data + sample data  9. Page: Task Details
     4. Theme, toast, shell    10. Page: Planner
@@ -17,76 +17,24 @@
 
 
 /* ==========================================================
-   1. COOKIE STORAGE
-   A cookie can only hold about 4 KB, so each value is turned
-   into JSON, URL-encoded, and split into chunks:
-       cw_tasks_n = 2      (how many chunks)
-       cw_tasks_0 = ...    cw_tasks_1 = ...
-   If the browser blocks cookies (Chrome does this for pages
-   opened straight from a file://) we fall back to localStorage
-   so the site still works.
+   1. STORAGE (localStorage)
+   Each list is turned into a JSON string and saved in the
+   browser's localStorage under its own key, e.g. "cw_tasks".
+   It stays there until the user clears their browser data.
    ========================================================== */
-const COOKIE_DAYS = 365;
-const CHUNK_SIZE = 3000;
-const KEYS = { tasks:'cw_tasks', dates:'cw_dates', courses:'cw_courses', prefs:'cw_prefs', seeded:'cw_seeded', focus:'cw_focus' };
-
-function setCookie(name, value, days){
-  document.cookie = name + '=' + value + '; max-age=' + (days * 86400) + '; path=/; SameSite=Lax';
-}
-function getCookie(name){
-  const pairs = document.cookie ? document.cookie.split('; ') : [];
-  for (const pair of pairs){
-    const i = pair.indexOf('=');
-    if (pair.slice(0, i) === name) return pair.slice(i + 1);
-  }
-  return null;
-}
-function deleteCookie(name){
-  document.cookie = name + '=; max-age=0; path=/; SameSite=Lax';
-}
-function cookiesAvailable(){
-  try {
-    setCookie('cw_test', '1', 1);
-    const ok = getCookie('cw_test') === '1';
-    deleteCookie('cw_test');
-    return ok;
-  } catch (e) { return false; }
-}
-const USE_COOKIES = cookiesAvailable();
-
-// { } [ ] : are allowed inside cookie values, so we put them back after
-// encoding, which keeps the cookies smaller.
-const COOKIE_SAFE = /%(7B|7D|5B|5D|3A)/g;
+const KEYS = { tasks:'cw_tasks', dates:'cw_dates', courses:'cw_courses', prefs:'cw_prefs', seeded:'cw_seeded' };
 
 function saveData(key, value){
-  const text = encodeURIComponent(JSON.stringify(value)).replace(COOKIE_SAFE, m => decodeURIComponent(m));
-  if (!USE_COOKIES){ try { localStorage.setItem(key, text); } catch (e) {} return; }
-  const oldCount = parseInt(getCookie(key + '_n') || '0', 10);
-  const count = Math.max(1, Math.ceil(text.length / CHUNK_SIZE));
-  for (let i = 0; i < count; i++) setCookie(key + '_' + i, text.slice(i * CHUNK_SIZE, (i + 1) * CHUNK_SIZE), COOKIE_DAYS);
-  for (let i = count; i < oldCount; i++) deleteCookie(key + '_' + i);   // remove leftover chunks
-  setCookie(key + '_n', String(count), COOKIE_DAYS);
+  try { localStorage.setItem(key, JSON.stringify(value)); } catch (e) {}
 }
 function loadData(key, fallback){
-  let text = '';
-  if (!USE_COOKIES){
-    try { text = localStorage.getItem(key) || ''; } catch (e) {}
-  } else {
-    const count = parseInt(getCookie(key + '_n') || '0', 10);
-    for (let i = 0; i < count; i++){
-      const part = getCookie(key + '_' + i);
-      if (part === null){ text = ''; break; }   // a chunk is missing → treat as empty
-      text += part;
-    }
-  }
-  if (!text) return fallback;
-  try { return JSON.parse(decodeURIComponent(text)); } catch (e) { return fallback; }
+  try {
+    const text = localStorage.getItem(key);
+    return text ? JSON.parse(text) : fallback;
+  } catch (e) { return fallback; }
 }
 function removeData(key){
-  if (!USE_COOKIES){ try { localStorage.removeItem(key); } catch (e) {} return; }
-  const count = parseInt(getCookie(key + '_n') || '0', 10);
-  for (let i = 0; i < count; i++) deleteCookie(key + '_' + i);
-  deleteCookie(key + '_n');
+  try { localStorage.removeItem(key); } catch (e) {}
 }
 
 
@@ -147,7 +95,7 @@ const ICON = {
    ========================================================== */
 const TYPES = ['Assignment', 'Quiz', 'Project', 'Presentation', 'Other'];
 const TYPE_IMG = { Assignment:'images/assignment.svg', Quiz:'images/quiz.svg', Project:'images/project.svg', Presentation:'images/presentation.svg', Other:'images/other.svg' };
-const DEFAULT_PREFS = { hoursPerDay:3, daysOff:'none', focusMin:25, breakMin:5 };
+const DEFAULT_PREFS = { hoursPerDay:3, daysOff:'none' };
 
 const STATE = { tasks:[], dates:[], courses:[], prefs:{ ...DEFAULT_PREFS } };
 
@@ -167,7 +115,7 @@ const findDate = id => STATE.dates.find(d => d.id === id);
 function sortedTasks(){ return STATE.tasks.slice().sort((a, b) => parseDue(a.due) - parseDue(b.due)); }
 function activeTasks(){ return sortedTasks().filter(t => !t.done); }
 
-/* --- task / date / course changes (each one saves to cookies) --- */
+/* --- task / date / course changes (each one saves to localStorage) --- */
 function addTask(fields){
   const now = Date.now();
   const task = { id:newId(), title:fields.title, course:fields.course, type:fields.type, due:fields.due, notes:fields.notes || '', done:false, createdAt:now, updatedAt:now };
@@ -228,7 +176,7 @@ function seedIfFirstVisit(){
   saveData(KEYS.seeded, true);
 }
 function clearAllData(){
-  [KEYS.tasks, KEYS.dates, KEYS.courses, KEYS.focus].forEach(removeData);
+  [KEYS.tasks, KEYS.dates, KEYS.courses].forEach(removeData);
   STATE.tasks = []; STATE.dates = []; STATE.courses = [];
   saveData(KEYS.seeded, true);   // stay empty: don't re-add the samples
 }
@@ -259,9 +207,7 @@ function initShell(){
 
   const note = $('#storageNote');
   if (note){
-    note.textContent = USE_COOKIES
-      ? 'Everything you add is saved in this browser’s cookies. No account, no server.'
-      : 'Cookies are blocked here (e.g. the page was opened as a local file), so your data is saved in this browser’s local storage instead.';
+    note.textContent = 'Everything you add is saved in this browser’s local storage. No account, no server.';
   }
 }
 
@@ -644,8 +590,6 @@ function initExplore(){
   $('#statusSelect').addEventListener('change', e => { EXP.status = e.target.value; renderExplore(); });
   $('#sortSelect').addEventListener('change', e => { EXP.sort = e.target.value; renderExplore(); });
   $('#taskList').addEventListener('click', onTaskListClick);
-  let resizeTimer;
-  window.addEventListener('resize', () => { clearTimeout(resizeTimer); resizeTimer = setTimeout(markLongDescriptions, 150); });
 
   rerender = renderExplore;
   renderExplore();
